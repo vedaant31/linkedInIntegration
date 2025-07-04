@@ -5,8 +5,8 @@
    
    
     <types>
-        <members>	youtubeComponent</members>
-        <name>LightningComponentBundle</name>
+        <members>LinkedInShareController</members>
+        <name>ApexClass</name>
     </types>
     
     <version>64.0</version>
