@@ -1,0 +1,62 @@
+<template>
+    <template if:true={errorMsg}>
+        <div class="slds-text-color_error error-message">{errorMsg}</div>
+    </template>
+
+    <!-- YouTube logo on the top left -->
+    <div class="header">
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+            <img class="yt-logo" alt="YouTube Logo" src={ytLogo}/>
+        </a>
+    </div>
+
+    <!-- Search bar in the center -->
+    <div class="search-bar">
+        <lightning-input 
+            class="search-box"  
+            value={searchQuery} 
+            placeholder="Search" 
+            onkeypress={handleEnter} 
+            onchange={HandleInput}
+        ></lightning-input>
+
+        
+        
+        <button class="searchBtn" onclick={getList}>
+            <img src={searchBtn} />
+            <span class="slds-p-left_xx-small">
+            </span>
+          </button>
+        
+
+        <!-- <lightning-button 
+            class="search-button" 
+            label="Search" 
+            variant="brand" 
+            onclick={getList}
+        ></lightning-button> -->
+    </div>
+
+    <template if:true={boolFlag}>
+        <table class="video-table slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th>Thumbnail</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Published At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={videoList} for:item="video">
+                    <tr key={video.title}>
+                            <td><img src= "{video.url}" class="thumbnail" /></td>
+                        <td>{video.title}</td>
+                        <td>{video.description}</td>
+                        <td>{video.publishTime}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+</template>

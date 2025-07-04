@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="About User" class="card">
+        <div class="profile-container">
+            <div class="avatar-section">
+                <img src={profile.picture} alt="Profile Picture" class="avatar" />
+            </div>
+            <div class="info-section">
+                <p class="name">{profile.name}</p>
+                <p class="email">
+                    <lightning-icon icon-name="utility:email" size="x-small" class="icon"></lightning-icon>
+                    {profile.email}
+                </p>
+                
+                <p class={emailClass}>
+                    <lightning-icon icon-name="utility:check" size="x-small" class="icon"></lightning-icon>
+                    Email Verified
+                </p>
+            </div>
+        </div>
+    </lightning-card>
+</template>

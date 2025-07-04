@@ -1,0 +1,13 @@
+# Salesforce and SFDX
+.sfdx/
+*.log
+node_modules/
+coverage/
+.env
+*.json
+.vscode/
+.idea/
+*.zip
+*.bak
+.DS_Store
+Thumbs.db

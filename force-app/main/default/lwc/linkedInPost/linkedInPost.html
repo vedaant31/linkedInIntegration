@@ -1,0 +1,31 @@
+<template>
+    <lightning-card>
+        <div class="composer-container">
+            
+
+            <div class="composer-body">
+                <textarea
+                    class="post-input"
+                    placeholder="Start a post..."
+                    value={postMessage}
+                    oninput={handleInputChange}>
+                </textarea>
+            </div>
+
+            <div class="composer-footer">
+                <div class="media-icons">
+                    <lightning-icon icon-name="utility:image" size="small"></lightning-icon>
+                    <lightning-icon icon-name="utility:link" size="small"></lightning-icon>
+                    <lightning-icon icon-name="utility:video" size="small"></lightning-icon>
+                </div>
+
+                <lightning-button
+                    label="Post"
+                    onclick={handlePostClick}
+                    variant="brand"
+                    disabled={isPostDisabled}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
